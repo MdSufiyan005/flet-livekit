@@ -2,7 +2,7 @@
 
 This project consists of two main components:
 
-1. **agent.py**: A LiveKit-based voice assistant agent that connects to a LiveKit server, processes voice input (Speech-to-Text via Deepgram), generates responses using an LLM, and returns audio output using ElevenLabs TTS.
+1. **agent.py**: A LiveKit-based voice assistant agent that connects to a LiveKit server, Deepgram/groq processes voice input , generates responses using a groq LLM, and returns audio output using Deepgram/groq TTS.
 2. **app.py**: A Flet-based desktop/web UI that:
 
    * Launches `agent.py` as a background process (with a "dev" argument).
@@ -18,6 +18,7 @@ This project consists of two main components:
 * LiveKit server credentials (API key and secret)
 * Deepgram API key
 * Groq API key
+* Livekit Credentials/key
 
 
 ---
@@ -52,6 +53,7 @@ This project consists of two main components:
    Create a `.env` file in the project root with the following variables:
 
    ```dotenv
+   LIVEKIT_URL=your_livekit_url
    LIVEKIT_API_KEY=your_livekit_api_key
    LIVEKIT_SECRET=your_livekit_secret
    DEEPGRAM_API_KEY=your_deepgram_api_key
